@@ -27,6 +27,7 @@ namespace AutomationWinappDriver
         [TestMethod]
         public void TestMethod1()
         {
+           
 
             if (Window == null)
 
@@ -37,7 +38,8 @@ namespace AutomationWinappDriver
 
                 Driver = new InternetExplorerDriver();
 
-
+                //implicit wait
+                Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
                 //Appiumptions
                 AppiumOptions desiredcapabilities = new AppiumOptions();
                 desiredcapabilities.AddAdditionalCapability("app", "Root");
@@ -65,7 +67,14 @@ namespace AutomationWinappDriver
                 new Actions(Driver).Click(CSV).Perform();
                 Window.FindElementByXPath("//Button[@Name='Save']").Click();
                 Window.FindElementByName("Open").Click();
-                Window.FindElementByXPath("//Button[@Name='Allow']").Click();
+                try
+                {
+                    Window.FindElementByXPath("//Button[@Name='Allow']").Click();
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e);
+                }
                 Driver.Quit();
 
                 //                
