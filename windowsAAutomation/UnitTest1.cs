@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO.Compression;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
@@ -40,6 +42,10 @@ namespace AutomationWinappDriver
 
                 //implicit wait
                 Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+                //WinAppDriver starting
+               
+                Process.Start("D:\\Windows Application Driver\\WinAppDriver.exe");
+                
                 //Appiumptions
                 AppiumOptions desiredcapabilities = new AppiumOptions();
                 desiredcapabilities.AddAdditionalCapability("app", "Root");
@@ -75,6 +81,7 @@ namespace AutomationWinappDriver
                 {
                     Console.WriteLine(e);
                 }
+
                 Driver.Quit();
 
                 //                
