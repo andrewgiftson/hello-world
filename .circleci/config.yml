@@ -36,6 +36,6 @@ jobs:
       # run tests!
       - run: 
           name: run tests
-          command: dotnet.exe test -v n --results-directory:test_coverage --collect:"Code Coverage"
+          command: dotnet.exe UnitTest1.cs -v n --results-directory:test_coverage --collect:"Code Coverage"
           
       
