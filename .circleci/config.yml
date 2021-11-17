@@ -36,6 +36,6 @@ jobs:
       # run tests!
       - run: 
           name: run tests
-          command: dotnet.exe UnitTest1.cs -v n --results-directory:test_coverage --collect:"Code Coverage"
+          command: nunit3-console.exe "D:\Andrew Projects\github\hello-world\windowsAAutomation\bin\Debug\windowsAAutomation.dll"
           
       
