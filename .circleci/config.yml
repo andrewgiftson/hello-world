@@ -36,6 +36,6 @@ jobs:
       # run tests!
       - run: 
           name: run tests
-          command: nunit3-console.exe "cd D:\Andrew Projects\github\hello-world\windowsAAutomation\bin\Debug\windowsAAutomation.dll"
+          command: nunit3-console.exe "cd ..\..\..\hello-world\windowsAAutomation\bin\Debug\windowsAAutomation.dll"
           
       
