@@ -18,5 +18,4 @@ jobs:
             echo '^^^That should look familiar^^^'
       - run:
           name: Running in a Unique Container
-          command: |
-            node -v
+          command: node -v
