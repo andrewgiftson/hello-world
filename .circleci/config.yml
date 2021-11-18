@@ -37,7 +37,7 @@ jobs:
       - run: 
           name: run tests
           command: |
-                  cd D:\Andrew Projects\github\hello-world\windowsAAutomation\bin\Debug
+                  D:\Andrew Projects\github\hello-world\windowsAAutomation\bin\Debug
                   dotnet vstest windowsAAutomation.dll
           
       
