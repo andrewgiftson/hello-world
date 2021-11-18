@@ -36,6 +36,6 @@ jobs:
       # run tests!
       - run: 
           name: run tests
-          command: MSTest /UnitTest1:..\..\..\hello-world\windowsAAutomation\bin\Debug\windowsAAutomation.dll
+          command: dotnet vstest windowsAAutomation.dll
           
       
