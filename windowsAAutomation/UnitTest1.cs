@@ -21,7 +21,7 @@ namespace AutomationWinappDriver
         //Appium Driver URL it works like a windows Service on your PC  
 
         private const string appiumDriverURI = "http://127.0.0.1:4723";
-   
+
         private const string calApp = "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App";
 
         protected static WindowsDriver<WindowsElement> Window;
@@ -29,7 +29,7 @@ namespace AutomationWinappDriver
         [TestMethod]
         public void TestMethod1()
         {
-           
+
 
             if (Window == null)
 
@@ -43,12 +43,14 @@ namespace AutomationWinappDriver
                 //implicit wait
                 Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
                 //WinAppDriver starting
-               try{
-                Process.Start("D:\\Windows Application Driver\\WinAppDriver.exe");
-               }
-               catch(Exception e){
-                   Console.WriteLine(e);
-               }
+                try
+                {
+                    Process.Start("D:\\Windows Application Driver\\WinAppDriver.exe");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
                 //Appiumptions
                 AppiumOptions desiredcapabilities = new AppiumOptions();
                 desiredcapabilities.AddAdditionalCapability("app", "Root");
@@ -72,7 +74,7 @@ namespace AutomationWinappDriver
                 IJavaScriptExecutor js = Driver as IJavaScriptExecutor;
                 js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight)");
                 Driver.FindElement(By.XPath("//label[text()='File Upload & Download event']")).Click();
-                IWebElement CSV =  Driver.FindElement(By.XPath("//a[text()='Regression.csv']"));
+                IWebElement CSV = Driver.FindElement(By.XPath("//a[text()='Regression.csv']"));
                 new Actions(Driver).Click(CSV).Perform();
                 Window.FindElementByXPath("//Button[@Name='Save']").Click();
                 Window.FindElementByName("Open").Click();
@@ -80,7 +82,7 @@ namespace AutomationWinappDriver
                 {
                     Window.FindElementByXPath("//Button[@Name='Allow']").Click();
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     Console.WriteLine(e);
                 }
