@@ -43,9 +43,12 @@ namespace AutomationWinappDriver
                 //implicit wait
                 Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
                 //WinAppDriver starting
-               
+               try{
                 Process.Start("D:\\Windows Application Driver\\WinAppDriver.exe");
-                
+               }
+               catch(Exception e){
+                   Console.WriteLine(e);
+               }
                 //Appiumptions
                 AppiumOptions desiredcapabilities = new AppiumOptions();
                 desiredcapabilities.AddAdditionalCapability("app", "Root");
