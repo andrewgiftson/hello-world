@@ -19,7 +19,7 @@ pipeline {
                             Files.copy(Paths.get(file.path), Paths.get("C:\\My-Destination"));                                   
                         }
                     }            
-                                                
+                }                             
               }                           
         } 
     
