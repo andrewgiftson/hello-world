@@ -20,7 +20,7 @@ pipeline {
                 }                                
             }                           
         } 
-    }
+    
 
         stage('Create') {
             steps {
