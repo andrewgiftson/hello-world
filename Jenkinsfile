@@ -11,8 +11,8 @@ pipeline {
                   import shutil
 import os
     
-source_dir = 'home\worskspace'
-target_dir = '\\var\www\html'
+source_dir = 'home/worskspace'
+target_dir = '//var/www/html'
     
 file_names = os.listdir(source_dir)
     
