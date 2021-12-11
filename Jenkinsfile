@@ -3,22 +3,23 @@ pipeline {
 
     
     stages{    
-     stage('Organise Files'){                         
+     stage('Organise Files')
+        {                         
          steps{  
-                script{                        
-                    File sourceFolder = new File("~/Worskspace/Food order app");
-                    File  destinationFolder = new File("/var/www/html");                                                   
-                    File[] listOfFiles = sourceFolder.listFiles();
-                    echo "Files Total: " + listOfFiles.length;  
-
-                    for (File file : listOfFiles) {
-                        if (file.isFile()) {
-                            echo file.getName()                                                                
-                            Files.copy(Paths.get(file.path), Paths.get("C:\\My-Destination"));                                   
-                        }
-                    }                  
+                script
+                {                        
+                  import shutil
+import os
+    
+source_dir = '~\worskspace'
+target_dir = '\\var\www\html'
+    
+file_names = os.listdir(source_dir)
+    
+for file_name in file_names:
+    shutil.move(os.path.join(source_dir, file_name), target_dir)            
                 }                                
-            }                           
+              }                           
         } 
     
 
