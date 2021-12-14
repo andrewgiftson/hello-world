@@ -8,7 +8,7 @@ pipeline {
          steps{  
                 script
                 {                        
-                  File sourceFolder = new File("/home/workspace/Food order app");
+                  File sourceFolder = new File("$Home/workspace/Online food order");
                     File  destinationFolder = new File("/var/www/html");                                                   
                     File[] listOfFiles = sourceFolder.listFiles();
                     echo "Files Total: " + listOfFiles.length;  
