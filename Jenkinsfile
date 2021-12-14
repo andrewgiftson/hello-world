@@ -10,7 +10,7 @@ pipeline {
                 {   
                     def workspace = env.WORKSPACE;
                     echo "------------${workspace}---------------------------------------------------";
-                  File sourceFolder = new File("/home/andrew/workspace/Online food order");
+                    File sourceFolder = new File("${workspace}");
                     File  destinationFolder = new File("/var/www/html/");                                                   
                     File[] listOfFiles = sourceFolder.listFiles();
                     echo "Files Total: " + listOfFiles.length;  
