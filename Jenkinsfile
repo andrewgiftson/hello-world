@@ -9,7 +9,7 @@ pipeline {
                 script
                 {   
                     def workspace = env.WORKSPACE;
-                    echo "${workspace}";
+                    echo "------------${workspace}---------------------------------------------------";
                   File sourceFolder = new File("/home/andrew/workspace/Online food order");
                     File  destinationFolder = new File("/var/www/html/");                                                   
                     File[] listOfFiles = sourceFolder.listFiles();
