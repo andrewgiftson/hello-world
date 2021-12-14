@@ -8,7 +8,7 @@ pipeline {
          steps{  
                 script
                 {                        
-                  File sourceFolder = new File("/home/andrew/workspace/Online food order");
+                  File sourceFolder = new File("~/andrew/workspace/Online food order");
                     File  destinationFolder = new File("/var/www/html");                                                   
                     File[] listOfFiles = sourceFolder.listFiles();
                     echo "Files Total: " + listOfFiles.length;  
@@ -16,7 +16,7 @@ pipeline {
                     for (File file : listOfFiles) {
                         if (file.isFile()) {
                             echo file.getName()                                                                
-                            Files.copy(Paths.get(file.path), Paths.get("/var/www/html"));                                   
+                            Files.copy(Paths.get(file.path), Paths.get(destinationFolder));                                   
                         }
                     }            
                 }                             
