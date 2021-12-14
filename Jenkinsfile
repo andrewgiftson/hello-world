@@ -2,29 +2,7 @@ pipeline {
     agent any
 
     
-    stages{    
-     stage('Organise Files')
-        {                         
-         steps{  
-                script
-                {   
-                    def workspace = env.WORKSPACE;
-                    echo "------------${workspace}---------------------------------------------------";
-                    File sourceFolder = new File("${workspace}");
-                    File  destinationFolder = new File("/var/www/html/");                                                   
-                    File[] listOfFiles = sourceFolder.listFiles();
-                    echo "Files Total: " + listOfFiles.length;  
-
-                    for (File file : listOfFiles) {
-                        if (file.isFile()) {
-                            echo file.getName()                                                                
-                            Files.copy(Paths.get(file.path), Paths.get(destinationFolder));                                   
-                        }
-                    }            
-                }                             
-              }                           
-        } 
-    
+    stages{        
 
         stage('Create') {
             steps {
