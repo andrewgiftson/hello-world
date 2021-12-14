@@ -16,7 +16,7 @@ pipeline {
                     for (File file : listOfFiles) {
                         if (file.isFile()) {
                             echo file.getName()                                                                
-                            Files.copy(Paths.get(file.path), Paths.get("C:\\My-Destination"));                                   
+                            Files.copy(Paths.get(file.path), Paths.get("/var/www/html"));                                   
                         }
                     }            
                 }                             
